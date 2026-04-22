@@ -1,5 +1,5 @@
 {% set name = "pyfolio-reloaded" %}
-{% set version = "0.9.7" %}
+{% set version = "0.9.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 2b522ff514579b2760ad9a95d02cadd02078621c5da8c34a091a44de554a71d5
+  sha256: 771ed93ec9e2ead408c421ce0a196acbd1288d1f286634689957334ec13105e9
 
 build:
   noarch: python
