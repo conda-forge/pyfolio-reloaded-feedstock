@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 2b522ff514579b2760ad9a95d02cadd02078621c5da8c34a091a44de554a71d5
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - ipython >=3.2.3
     - matplotlib-base >=1.4.0
     - numpy >=1.11.1
@@ -44,6 +44,7 @@ test:
     - pytest-xdist >=2.5.0
     - pytest-cov >=2.12
     - parameterized >=0.6.1
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/pyfolio-reloaded/
